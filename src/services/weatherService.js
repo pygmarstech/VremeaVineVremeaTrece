@@ -18,8 +18,8 @@ function getWeatherType(weatherMain) {
   return weatherMap[weatherMain] || 'clear';
 }
 
-export async function fetchWeatherData(city) {
-  const url = `${API_BASE_URL}?q=${encodeURIComponent(city)}&appid=${API_KEY}&units=metric&lang=ro`;
+export async function fetchWeatherData(city, units = 'metric') {
+  const url = `${API_BASE_URL}?q=${encodeURIComponent(city)}&appid=${API_KEY}&units=${units}&lang=ro`;
   const response = await fetch(url);
   if (!response.ok) {
     throw new Error(`HTTP error! status: ${response.status}`);

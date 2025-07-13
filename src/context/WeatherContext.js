@@ -14,7 +14,7 @@ export const WeatherProvider = ({ children }) => {
   const fetchWeatherData = async (city) => {
     setLoading(true);
     try {
-      const weatherData = await fetchWeatherDataService(city);
+      const weatherData = await fetchWeatherDataService(city, units);
       setWeatherData(weatherData);
       if (!searchHistory.includes(city)) {
         setSearchHistory(prev => [city, ...prev.slice(0, 4)]);
@@ -31,7 +31,7 @@ export const WeatherProvider = ({ children }) => {
   useEffect(() => {
     fetchWeatherData('București');
     // eslint-disable-next-line
-  }, []);
+  }, [units]);
 
   const handleSearch = (e) => {
     if (e) e.preventDefault();
