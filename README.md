@@ -1,70 +1,71 @@
-# Getting Started with Create React App
+src/
+assets/
+i18n/
+translations.js # Traduceri pentru descrieri meteo
+context/
+WeatherContext.js # Context global pentru starea aplicației
+pages/
+HomePage.js # Pagina principală (căutare, favorite, vreme)
+HomePage.css
+HistoryPage.js # Istoric căutări
+HistoryPage.css
+SettingsPage.js # Setări (unități, favorite)
+SettingsPage.css
+services/
+weatherService.js # Logica de fetch API OpenWeatherMap
+Navigation.js # Bara de navigare principală
+App.js # Componentele de bază și rutarea
+App.css # Stiluri globale și pentru navigație
+index.js # Punctul de intrare
+public/
+index.html, manifest.json, favicon.ico, logo.png
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+---
 
-In the project directory, you can run:
+## Arhitectură și flux
 
-### `npm start`
+- **WeatherContext** gestionează toată starea globală: date meteo, favorite, istoric, unități, oraș căutat, încărcare.
+- **weatherService.js** conține logica de interogare a API-ului OpenWeatherMap și transformarea datelor.
+- **Pagini principale**:
+  - **HomePage**: căutare oraș, afișare vreme, favorite.
+  - **HistoryPage**: listă cu ultimele căutări, posibilitate de reafișare rapidă.
+  - **SettingsPage**: schimbare unități (C/F), gestionare favorite.
+- **Navigare**: realizată cu React Router, meniul principal este în `Navigation.js`.
+- **i18n**: traduceri pentru descrierile meteo, ușor de extins pentru alte limbi.
+- **Stilizare**: CSS modular, BEM, media queries pentru responsive, utilitare Tailwind disponibile.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+---
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Cum rulezi aplicația
 
-### `npm test`
+1. Instalează dependențele:
+   ```bash
+   npm install
+   ```
+2. Pornește aplicația:
+   ```bash
+   npm start
+   ```
+3. Accesează în browser: [http://localhost:3000](http://localhost:3000)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+---
 
-### `npm run build`
+## Alte detalii
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- Aplicația folosește strict Context API pentru state management, fără Redux.
+- Poți adăuga ușor noi orașe favorite sau poți schimba unitățile de măsură din setări.
+- Istoricul păstrează ultimele 5 căutări.
+- Codul este modular și ușor de extins cu noi funcționalități.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+---
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Screenshots
 
-### `npm run eject`
+*(Adaugă aici capturi de ecran relevante dacă dorești)*
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+---
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Licență
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Acest proiect este open-source și poate fi folosit/modificat liber.
