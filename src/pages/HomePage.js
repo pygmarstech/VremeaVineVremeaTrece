@@ -32,7 +32,6 @@ const HomePage = () => {
 
   return (
     <div className="home">
-      {/* Search Bar */}
       <div className="home__search-container">
         <div className="home__search-input-container">
           <div className="home__search-icon">
@@ -55,7 +54,6 @@ const HomePage = () => {
         </button>
       </div>
 
-      {/* Favorite Cities */}
       <div className="home__favorites">
         <h2 className="home__favorites-title">Orașe favorite</h2>
         <div className="home__favorites-buttons">
@@ -71,7 +69,6 @@ const HomePage = () => {
         </div>
       </div>
 
-      {/* Loading */}
       {loading && (
         <div className="home__loading-container">
           <Loader size={32} color="#2563eb" style={{animation: 'spin 1s linear infinite'}} />
@@ -79,10 +76,8 @@ const HomePage = () => {
         </div>
       )}
 
-      {/* Main Weather Display */}
       {weatherData && !loading && (
         <div className="home__weather-grid">
-          {/* Current Weather */}
           <div className="home__weather-main">
             <div className="home__weather-main-header">
               <div>
@@ -104,7 +99,6 @@ const HomePage = () => {
               Se simte ca {Math.round(weatherData.feels_like)}°{units === 'metric' ? 'C' : 'F'}
             </div>
           </div>
-          {/* Weather Details */}
           <div className="home__weather-details">
             <h3 className="home__weather-details-title">Detalii meteo</h3>
             <div className="home__weather-details-grid">

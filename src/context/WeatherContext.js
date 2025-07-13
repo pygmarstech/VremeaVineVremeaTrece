@@ -30,7 +30,6 @@ export const WeatherProvider = ({ children }) => {
 
   useEffect(() => {
     fetchWeatherData('București');
-    // eslint-disable-next-line
   }, [units]);
 
   const handleSearch = (e) => {

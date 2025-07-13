@@ -1,4 +1,3 @@
-// src/i18n/translations.js
 
 const weatherDescriptionTranslations = {
   'clear sky': 'cer senin',
